@@ -1,0 +1,6 @@
+[ConcreteSubject|+subjectState|{bg:yellowgreen}]наблюдает<-[ConcreteObserver|-observerState|+update(){bg:yellowgreen}]
+
+[«interface»Subject|+attach(in o : Observer);+detach(in o : Observer);+notify(){bg:yellowgreen}]оповещает->[«interface»Observer|+update(){bg:yellowgreen}]
+
+[«interface»Subject|+attach(in o : Observer);+detach(in o : Observer);+notify()]^-[ConcreteSubject|+subjectState|]
+[«interface»Observer|+update()]^-[ConcreteObserver|-observerState|+update()]
